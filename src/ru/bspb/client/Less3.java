@@ -1,7 +1,5 @@
 package ru.bspb.client;
 
-import java.util.Arrays;
-
 class Less2 {
     public static void main(String[] args) {
         Client[] clients = new Client[]{
@@ -17,16 +15,24 @@ class Less2 {
                 new Client("Piter", "m", 23)
         };
 
-        Clientsort(clients);
+        clientsort(clients);
 
         for (int i = 0; i < clients.length; i++) {
+            int k=0;
             if (clients[i].sex.equals("m")) {
-                    System.out.println(clients[i]);
+
+                for (int j = 0; j < clients.length; j++) {
+
+                    if (clients[i].fio.equals(clients[j].fio)) {
+                        k++;
+                    }
+                }
+                if(k==1){System.out.println(clients[i]);}
             }
         }
     }
 
-    public static void Clientsort(Client[] arr){
+    public static void clientsort(Client[] arr){
         for(int i = arr.length-1 ; i > 0 ; i--){
             for(int j = 0 ; j < i ; j++){
                 if( arr[j].age > arr[j+1].age ){
