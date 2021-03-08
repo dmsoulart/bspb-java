@@ -1,7 +1,5 @@
 package ru.bspb.lesson5;
 
-import java.util.Arrays;
-
 public class Less5 {
     public static void main(String[] args) {
         Client[] clientBase = {
